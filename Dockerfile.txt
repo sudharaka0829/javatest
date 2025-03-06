@@ -1,0 +1,14 @@
+# Use official OpenJDK image as base image
+FROM openjdk:17-jdk-slim
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy the JAR file into the container
+COPY app.jar /app/app.jar
+
+# Expose the port (if needed)
+EXPOSE 8080
+
+# Run the Java JAR file when the container starts
+ENTRYPOINT ["java", "-jar", "app.jar"]
